@@ -1,0 +1,9 @@
+#
+# Ignore files.
+#
+
+.idea
+
+go.sum
+
+*.bak
