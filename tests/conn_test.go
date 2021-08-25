@@ -11,7 +11,7 @@ import (
 	"github.com/fuyibing/log/v2"
 	"github.com/google/uuid"
 
-	"es"
+	"github.com/fuyibing/es"
 )
 
 func TestConnCreate(t *testing.T) {
@@ -59,7 +59,6 @@ func TestConnDelete(t *testing.T) {
 	t.Logf("del not found, index=%s.", res.DocumentIndex)
 
 }
-
 
 func TestConnSearch(t *testing.T) {
 
@@ -154,8 +153,8 @@ func TestConnUpdateByQuery(t *testing.T) {
 }
 
 type PHPLog struct {
-	TraceId string       `json:"traceId"`
-	Level   string       `json:"level"`
+	TraceId string `json:"traceId"`
+	Level   string `json:"level"`
 	Time    es.Timeline
 	// `json:"time"`
 }

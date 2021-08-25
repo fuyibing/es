@@ -7,7 +7,7 @@ import (
 	"context"
 	"fmt"
 
-	"es"
+	"github.com/fuyibing/es"
 )
 
 type EquityManager struct {

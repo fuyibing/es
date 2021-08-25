@@ -9,7 +9,7 @@ import (
 
 	"github.com/fuyibing/log/v2"
 
-	"es"
+	"github.com/fuyibing/es"
 )
 
 func TestQueue(t *testing.T) {
@@ -18,9 +18,9 @@ func TestQueue(t *testing.T) {
 		es.Queue.Add(ctx, es.QueueData{})
 	}
 
-	time.Sleep(time.Second*5)
+	time.Sleep(time.Second * 5)
 
 	es.Queue.Add(ctx, es.QueueData{})
-	time.Sleep(time.Second*5)
+	time.Sleep(time.Second * 5)
 
 }

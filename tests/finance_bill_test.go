@@ -8,7 +8,7 @@ import (
 
 	"github.com/fuyibing/log/v2"
 
-	"es/finance"
+	"github.com/fuyibing/es/finance"
 )
 
 func TestFinanceBillCreate(t *testing.T) {

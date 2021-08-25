@@ -9,7 +9,7 @@ import (
 	"github.com/fuyibing/log/v2"
 	"github.com/google/uuid"
 
-	"es"
+	"github.com/fuyibing/es"
 )
 
 func TestUpdateById(t *testing.T) {

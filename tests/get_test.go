@@ -8,7 +8,7 @@ import (
 
 	"github.com/fuyibing/log/v2"
 
-	"es"
+	"github.com/fuyibing/es"
 )
 
 func TestMget(t *testing.T) {

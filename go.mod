@@ -1,4 +1,4 @@
-module es
+module github.com/fuyibing/es
 
 go 1.15
 

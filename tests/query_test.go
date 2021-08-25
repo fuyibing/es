@@ -7,7 +7,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"es"
+	"github.com/fuyibing/es"
 )
 
 func TestQuery(t *testing.T) {
