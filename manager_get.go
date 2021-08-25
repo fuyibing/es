@@ -34,8 +34,6 @@ func (o *GetManager) Do(ctx context.Context) (*GetResponse, error) {
 		return nil, err
 	}
 
-	println("found: ", string(body))
-
 	res := &GetResponse{}
 	if err = json.Unmarshal(body, res); err != nil {
 		return nil, err
