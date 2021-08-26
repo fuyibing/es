@@ -31,6 +31,11 @@ func (o *Connection) Get() *GetManager {
 	return NewGetManager()
 }
 
+// 读取文档.
+func (o *Connection) Gets() *GetsManager {
+	return NewGetsManager()
+}
+
 // 删除文档.
 func (o *Connection) Delete() *DeleteManager {
 	return NewDeleteManager()

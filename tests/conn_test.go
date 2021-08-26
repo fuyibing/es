@@ -64,10 +64,10 @@ func TestConnSearch(t *testing.T) {
 
 	ctx := log.NewContext()
 	res, err := es.Conn.Search().
-		Index("logstash-uniondrug-log-2021.08.23").
-		// Index("finance").
-		Type("log").
-		// Type("fin").
+		// Index("logstash-uniondrug-log-2021.08.23").
+		Index("finance").
+		// Type("log").
+		Type("fin").
 		Query(
 			es.NewSearchQuery().MustTerm("version.keyword", "0.95.5"),
 		).
