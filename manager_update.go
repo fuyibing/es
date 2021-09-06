@@ -7,7 +7,6 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
-	"fmt"
 
 	"github.com/elastic/go-elasticsearch/v7/esapi"
 )
@@ -46,25 +45,8 @@ func (o *UpdateManager) Do(ctx context.Context) (*UpdateResponse, error) {
 //      "key": "value",
 //   })
 func (o *UpdateManager) Set(data map[string]interface{}) *UpdateManager {
-	// 1. 准备字段.
-	n := 0
-	source, comma := "", ""
-	params := map[string]interface{}{}
-	for k, v := range data {
-		source += comma + fmt.Sprintf("ctx._source.%s=params.%s", k, k)
-		params[k] = v
-		comma = ";"
-		n++
-	}
-	if n == 0 {
-		o.err = ErrorNoDocumentScript
-		return o
-	}
 	buf, err := json.Marshal(map[string]interface{}{
-		"script": map[string]interface{}{
-			"source": source,
-			"params": params,
-		},
+		"doc": data,
 	})
 
 	// 2. 字段错误.
