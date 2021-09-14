@@ -58,13 +58,13 @@ func (o *MappingManager) AsShort(ks ...string) *MappingManager   { return o.UseS
 func (o *MappingManager) AsKeyword(ks ...string) *MappingManager {
 	for _, k := range ks {
 		o.body[k] = map[string]interface{}{
-			"type": "text",
-			"fields": map[string]map[string]interface{}{
-				"keyword": {
-					"type":         "keyword",
-					"ignore_above": 256,
-				},
-			},
+			"type": "keyword",
+			// "fields": map[string]map[string]interface{}{
+			// 	"keyword": {
+			// 		"type":         "keyword",
+			// 		"ignore_above": 256,
+			// 	},
+			// },
 		}
 	}
 	return o
