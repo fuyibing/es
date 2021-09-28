@@ -129,7 +129,28 @@ func (o *Connection) Send(ctx context.Context, req esapi.Request) ([]byte, error
 
 // 初始化连接.
 func (o *Connection) init() {
-	o.cli, o.err = elasticsearch.NewClient(elasticsearch.Config{
-		Addresses: Config.Address,
-	})
+
+	cfg := elasticsearch.Config{Addresses: Config.Address}
+
+	if Config.Username != "" {
+		cfg.Username = Config.Username
+	}
+
+	if Config.Password != "" {
+		cfg.Password = Config.Password
+	}
+
+	if Config.CloudID != "" {
+		cfg.CloudID = Config.CloudID
+	}
+
+	if Config.APIKey != "" {
+		cfg.APIKey = Config.APIKey
+	}
+
+	if Config.Token != "" {
+		cfg.ServiceToken = Config.Token
+	}
+
+	o.cli, o.err = elasticsearch.NewClient(cfg)
 }

@@ -20,6 +20,12 @@ const (
 type Configuration struct {
 	Address        []string `yaml:"address"`         // ES API地址列表.
 	MaxConcurrency int64    `yaml:"max-concurrency"` // 队列调用ES最大并发数.
+
+	Username string `yaml:"username"`
+	Password string `yaml:"password"`
+	CloudID  string `yaml:"cloud-id"`
+	APIKey   string `yaml:"api-key"`
+	Token    string `yaml:"token"`
 }
 
 // 从文件中加载.
