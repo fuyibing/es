@@ -20,6 +20,7 @@ const (
 type Configuration struct {
 	Address        []string `yaml:"address"`         // ES API地址列表.
 	MaxConcurrency int64    `yaml:"max-concurrency"` // 队列调用ES最大并发数.
+	RetryOnConflict int `yaml:"retry_on_conflict"` // 冲突重试.
 
 	Username string `yaml:"username"`
 	Password string `yaml:"password"`
@@ -47,5 +48,9 @@ func (o *Configuration) init() {
 	}
 	if o.MaxConcurrency == 0 {
 		o.MaxConcurrency = DefaultMaxConcurrency
+	}
+
+	if o.RetryOnConflict == 0 {
+		o.RetryOnConflict = 5
 	}
 }

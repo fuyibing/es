@@ -25,6 +25,8 @@ func (o *UpdateManager) Do(ctx context.Context) (*UpdateResponse, error) {
 		return nil, err
 	}
 
+	o.req.RetryOnConflict = &Config.RetryOnConflict
+
 	body, err := Conn.Send(ctx, o.req)
 	if err != nil {
 		return nil, err
